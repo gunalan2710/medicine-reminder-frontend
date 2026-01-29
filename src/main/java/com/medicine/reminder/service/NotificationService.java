@@ -10,21 +10,21 @@ import org.springframework.stereotype.Service;
 public class NotificationService {
 
     private final EmailService emailService;
-    private final SmsService smsService;
-    private final WhatsAppService whatsAppService;
+//    private final SmsService smsService;
+//    private final WhatsAppService whatsAppService;
 
     public void sendEmail(String to, String subject, String body) {
         log.info("Sending email to {}", to);
         emailService.sendSimpleMessage(to, subject, body);
     }
 
-    public void sendSms(String to, String body) {
-        log.info("Sending SMS to {}", to);
-        smsService.sendSms(to, body);
-    }
-
-    public void sendWhatsApp(String to, String body) {
-        log.info("Sending WhatsApp to {}", to);
-        whatsAppService.sendWhatsApp(to, body);
-    }
+//    public void sendSms(String to, String body) {
+//        log.info("Sending SMS to {}", to);
+//        smsService.sendSms(to, body);
+//    }
+//
+//    public void sendWhatsApp(String to, String body) {
+//        log.info("Sending WhatsApp to {}", to);
+//        whatsAppService.sendWhatsApp(to, body);
+//    }
 }

@@ -45,9 +45,9 @@ public class SchedulerService {
                     sendEmailReminder(user, medicineName, time);
                 }
 
-                if (user.isSmsNotificationsEnabled() && user.getPhone() != null) {
-                    sendSmsReminder(user, medicineName, time);
-                }
+//                if (user.isSmsNotificationsEnabled() && user.getPhone() != null) {
+//                    sendSmsReminder(user, medicineName, time);
+//                }
 
                 dose.setNotified(true);
                 doseLogRepository.save(dose);
@@ -92,9 +92,9 @@ public class SchedulerService {
         notificationService.sendEmail(user.getEmail(), subject, body);
     }
 
-    private void sendSmsReminder(User user, String medicineName, String time) {
-        String body = String.format("Medicine Reminder: Time to take %s (%s). Please update your log.",
-                medicineName, time);
-        notificationService.sendSms(user.getPhone(), body);
-    }
+//    private void sendSmsReminder(User user, String medicineName, String time) {
+//        String body = String.format("Medicine Reminder: Time to take %s (%s). Please update your log.",
+//                medicineName, time);
+//        notificationService.sendSms(user.getPhone(), body);
+//    }
 }
